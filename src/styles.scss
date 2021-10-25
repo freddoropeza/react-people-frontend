@@ -1,0 +1,50 @@
+// --------------------------
+// VARIABLES
+// --------------------------
+$maincolor: black;
+$contrastcolor: white;
+
+$mainfont: "Helvetica";
+
+@mixin white-text-black-bg {
+  color: $contrastcolor;
+  background-color: $maincolor;
+}
+
+@mixin black-text-white-bg {
+  color: $maincolor;
+  background-color: $contrastcolor;
+}
+
+// --------------------------
+// Header
+// --------------------------
+
+.Header {
+  @include white-text-black-bg;
+  font-family: $mainfont;
+  display: flex;
+  justify-content: flex-start;
+  // also in SASS, you can nest your styles or your style rules 
+  a {
+    @include black-text-white-bg();
+    // &:hover { color : blue }
+    h1 {
+      margin: 10px;
+      font-size: large;
+    }
+  }
+}
+
+.Form {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    min-height: 10rem;
+    max-width: 7rem;
+    margin: 5rem auto;
+    // input[type="submit"] {
+    //   justify-self: flex-start;
+    // }
+  }
